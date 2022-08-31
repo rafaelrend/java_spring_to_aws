@@ -18,6 +18,18 @@
   		<java.version>11</java.version>
   </properties>
   
+  <profiles>
+    <profile>
+        <id>development</id>
+        <properties>
+            <spring.profiles.active>development</spring.profiles.active>
+        </properties>
+        <activation>
+            <activeByDefault>true</activeByDefault>
+        </activation>
+    </profile>
+  </profiles>
+
   <dependencies>
  		<!-- for SpringBoot support -->
 		<dependency>
@@ -120,9 +132,9 @@
 				<groupId>org.flywaydb</groupId>
 				<artifactId>flyway-maven-plugin</artifactId>
 				<configuration>
-					<url>jdbc:mysql://localhost:3306/docker_to_aws_with_java?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
+					<url>jdbc:mysql://dockerwithawswithjava.cu77g0iaywgx.us-east-1.rds.amazonaws.com:3306/dockerToAwsWithJava?useTimezone=true&amp;serverTimezone=UTC&amp;useSSL=false</url>
 					<user>docker</user>
-					<password>mysql</password>
+					<password>docker123</password>
 				</configuration>
 				<dependencies>
 					<dependency>
